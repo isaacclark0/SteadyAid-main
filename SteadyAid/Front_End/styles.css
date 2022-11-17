@@ -1,0 +1,328 @@
+img {
+    border-radius: 10px;
+}
+
+/* FONT */
+nav a {
+    font-family: "Righteous", sans-serif;
+}
+
+/* NAVBAR STYLE */
+.navbar-brand {
+    font-size: 1.28rem;
+}
+
+.navbar-toggler-icon {
+    color: black;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: dodgerblue;
+}
+
+.navbar-color {
+    background-color: white;
+}
+
+.container .brand-color {
+    color: dodgerblue;
+}
+
+.nav-item .btn {
+    width: 6rem;
+    margin: 1rem 0.5rem 0.5rem 0.5rem;
+}
+
+@media (min-width: 767px) {
+    .nav-item .btn-outline-dark {
+        margin-right: 0;
+    }
+}
+
+/* FORM STYLES */
+.flex-center {
+    height: 93vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    min-height: calc(100vh - 78px);
+}
+
+.sign-log-h1 {
+    margin-bottom:1.5rem;
+}
+
+.half-margin {
+    margin: 1rem 0;
+}
+
+.form-div {
+    text-align: center;
+    width: 50rem;
+}
+
+.form-div-login {
+    text-align: center;
+    width: 25rem;
+}
+
+.forgot-pass {
+    text-align: right;
+}
+
+.btn {
+    width: 8rem;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.signup-login-a {
+    text-decoration: none;
+    color: black;
+}
+
+.signup-login-a:hover {
+    text-decoration: underline;
+    color: #0d6efd;
+}
+
+@media (max-width: 767px) {
+    .form-div {
+        width: 90%;
+    }
+
+    .half-margin-md {
+        margin: 0 0 1rem 0;
+    }
+}
+
+/* ABOUT US */
+.about-title {
+    margin: 1rem 0;
+    text-align: center;
+}
+.grid-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.one-rem-padding {
+    padding: 1rem;
+}
+
+@media (max-width: 992px) {
+    .grid-div {
+        display: block;
+    }
+}
+
+/* CONTACT US */
+.contact-title {
+    text-align: center;
+    margin: 1rem 0 4rem 0;
+}
+
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.fa-location-dot {
+    color: #0d6efd;
+}
+
+.address-section, .contact-section {
+    margin: 3rem;
+    text-align: center;
+}
+
+.contact-p {
+    margin: 0;
+}
+
+/* HOME */
+.padded-main {
+    padding-top: 4rem;
+}
+
+.home-img {
+    border-radius: 10px;
+}
+
+.vh-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-text {
+    text-align: center;
+}
+
+.vh-center .home-text .btn {
+    width: 6rem;
+    margin: 0;
+}
+
+.call-to-action .btn {
+    width: 6rem;
+    margin: 0;
+}
+
+.call-to-action {
+    text-align: center;
+    margin: 2rem;
+}
+
+@media (max-width: 992px) {
+    .padded-main {
+        padding-top: 0;
+    }
+}
+
+/* FOOTER */
+footer {
+    background-color: #0d6efd;
+    min-height: 4rem;
+    height: fit-content;
+    margin-top: 1rem;
+}
+
+.footer-links {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.25rem;
+}
+
+.footer-links:hover {
+    color: black;
+}
+
+.footer-flex {
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Donation Page */
+.search-grid {
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+}
+
+.search-bar-form {
+    margin: 1rem 0 3rem 0;
+}
+
+.search-bar {
+    display: inline;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    border: 1px solid black;
+}
+
+.search-btn {
+    border-radius: 0.25rem;
+    background-color: #0d6efd;
+    color: white;
+    border: 1px solid black;
+}
+
+.search-btn:hover {
+    background-color: #0163f7;
+}
+
+.list-org-link {
+    text-decoration: none;
+    color: black;
+    size: 2rem;
+    font-weight: bold;
+}
+
+.list-grid-item {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    list-style: none;
+    margin: 3rem 0;
+}
+
+.list-grid-item-info {
+    padding: 1rem;
+}
+
+.list-grid-item img {
+    width: 100%;
+}
+
+/* ACCOUNT */
+.information-div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account-grid-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 20px);
+    row-gap: 1rem;
+    width: 325px;
+}
+
+.organization-grid-div {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(6, 20px);
+    row-gap: 1rem;
+    width: 350px;
+}
+
+.center-acc-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-btn-div {
+    text-align: center;
+}
+
+.center-btn-div .btn {
+    width: 9rem;
+}
+
+/* Individual Organization Page */
+.org-name-div {
+    text-align: center;
+}
+
+.org-center-btn-div {
+    text-align: center;
+}
+
+.text-message {
+    height: 200px;
+}
+
+.dedicated-org {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .list-grid-item {
+        display: block;
+    }
+}

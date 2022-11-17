@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="//">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Donate | Steady Aid</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container">
+                <a class="navbar-brand brand-color" href="/">Steady Aid</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse nav-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/donate">Donate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse nav-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="btn btn-primary" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-dark" href="/sign-up">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <form class="search-bar-form" action="">
+                <div class="search-grid">
+                    <input type="search" class="search-bar" name="search" id="search" placeholder="Search Organization.." aria-label="search for organization">
+
+                    <script>
+                        var x = document.getElementById("search").value;
+                    </script>
+
+                    <button class="search-btn"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+            <section class="search-results-list">
+                <ul>
+                    <li class="list-grid-item">
+                        <img src="images/donations.jpg" alt="">
+                        <div class="list-grid-item-info">
+                            <a href="/org-page" class="list-org-link"><p id="list-org-name">Organization Name</p></a>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quam doloremque accusantium sequi voluptate debitis numquam id deleniti! Commodi, impedit! Ea fugit, ducimus molestias aliquam magni mollitia doloremque dolore molestiae.</p>
+                        </div>
+                    </li>
+                    <li class="list-grid-item">
+                        <img src="images/donations.jpg" alt="">
+                        <div class="list-grid-item-info">
+                            <a href="/org-page" class="list-org-link"><p id="list-org-name">Organization Name</p></a>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quam doloremque accusantium sequi voluptate debitis numquam id deleniti! Commodi, impedit! Ea fugit, ducimus molestias aliquam magni mollitia doloremque dolore molestiae.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-flex">
+            <div>
+                <a href="/" class="footer-links">Home</a>
+                <a href="/donate" class="footer-links">Donate</a>
+                <a href="/about" class="footer-links">About</a>
+                <a href="/contact" class="footer-links">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
