@@ -101,6 +101,7 @@
                         <input type="password" class="form-control" id="password" placeholder="Password" aria-describedby="passwordHelp" required>
                         <small id="passwordHelp" class="form-text text-muted">Your password must be at least 8 characters long, contain uppercase and lowercase letters, and at least one number.</small>
                     </div>
+                    <p class="signup-error"></p>
                     <button type="submit" value="Submit" class="btn btn-primary">Sign up</button>
                     <p class="signup-message">Already have an account? <a class="signup-login-a" href="/login">Login</a></p>
                 </form>
@@ -108,41 +109,66 @@
                     const form = document.getElementById('signup-form-2')
                     form.addEventListener('submit', registerOrg)
 
-                    async function registerOrg(event){
-                        event.preventDefault()
+                    async function registerOrg(event) {
+                        const pass = document.getElementById('password')
+                        const signupError = document.querySelector('.signup-error')
 
-                        const orgName = document.getElementById('orgName').value
-                        const firstName = document.getElementById('firstName').value
-                        const lastName = document.getElementById('lastName').value
-                        const address = document.getElementById('streetAddress').value
-                        const city = document.getElementById('city').value
-                        const state = document.getElementById('state').value
-                        const zip = document.getElementById('zip').value
-                        const email = document.getElementById('email').value
-                        const password = document.getElementById('password').value
+                        let errorMessage = []
+                        if (pass.value.length < 8) {
+                            errorMessage.push("Password must be at least 8 characters long.")
+                        }
+                        if (!pass.value.match(/[a-z]/)) {
+                            errorMessage.push("Password must include one lowercase character.")
+                        }
+                        if (!pass.value.match(/[A-Z]/)) {
+                            errorMessage.push("Password must include one uppercase characer.")
+                        }
+                        if (!pass.value.match(/[0-9]/)) {
+                            errorMessage.push("Password must include one digit.")
+                        }
+                        console.log(errorMessage)
+                        if (errorMessage.length > 0) {
+                            signupError.innerText = errorMessage.join('\n')
+                            event.preventDefault()
+                            errorMessage = []
+                        } else {
+                            event.preventDefault()
 
-                        const  result = await fetch('/api/register-org', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({
-                                orgName,
-                                firstName,
-                                lastName,
-                                address,
-                                city,
-                                state,
-                                zip,
-                                email,
-                                password
-                            })
-                        }).then((res) => res.json())
+                            const orgName = document.getElementById('orgName').value
+                            const firstName = document.getElementById('firstName').value
+                            const lastName = document.getElementById('lastName').value
+                            const address = document.getElementById('streetAddress').value
+                            const city = document.getElementById('city').value
+                            const state = document.getElementById('state').value
+                            const zip = document.getElementById('zip').value
+                            const email = document.getElementById('email').value
+                            const password = document.getElementById('password').value
 
-                        if(result.status === 'ok'){
-                            //everything went fine
-                        } else{
-                            alert(result.error)
+                            const  result = await fetch('/api/register-org', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    orgName,
+                                    firstName,
+                                    lastName,
+                                    address,
+                                    city,
+                                    state,
+                                    zip,
+                                    email,
+                                    password
+                                })
+                            }).then((res) => res.json())
+
+                            if(result.status === 'ok'){
+                                //everything went fine
+                                window.location.assign("http://localhost:5000/login");
+                            } else{
+                                alert(result.error)
+                            }
+
                         }
                     }
                 </script>

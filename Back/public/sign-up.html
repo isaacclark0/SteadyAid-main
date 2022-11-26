@@ -48,7 +48,7 @@
     <main>
         <div class="flex-center">
             <div class="container form-div">
-                <form class="login-form" action="/" id="signup-form" method="post" role="form"> <!-- Include form action -->
+                <form class="login-form" action="/login" id="signup-form" method="post" role="form"> <!-- Include form action -->
                     <div class="sign-log-h1">
                         <h1>Sign Up</h1>
                         <p>Want to sign up as an organizaton? <a class="signup-login-a" href="/org-signup">Organization Sign up</a></p>
@@ -97,7 +97,7 @@
                         const email = document.getElementById('email').value
                         const password = document.getElementById('password').value
 
-                        const  result = await fetch('/api/register-user', {
+                        const  result = await fetch('/api/sign-up', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'

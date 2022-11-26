@@ -59,12 +59,12 @@
                         <input type="password" class="form-control" id="password" placeholder="Password" aria-describedby="passwordHelp" required>
                         <p class="signup-message forgot-pass"><a class="signup-login-a" href="/forgot-password">Forgot Password?</a></p>
                     </div>
-                    <button type="submit"value ="Submit Form" class="btn btn-primary">Login</button>
+                    <button type="submit" value ="Submit Form" class="btn btn-primary">Login</button>
                     <p class="signup-message">Need an account? <a class="signup-login-a" href="/sign-up">Sign up</a></p>
                 </form>
                 <script>
                      const form = document.getElementById('login')
-                    form.addEventListener('submit', login)
+                     form.addEventListener('submit', login)
 
                     async function login(event){
                         event.preventDefault()
@@ -81,11 +81,12 @@
                                 password
                             })
                         }).then((res) => res.json())
-
+                        
                         if(result.status === 'ok'){
                             //everything went fine
                             console.log('Got the token: ', result.data)
                             localStorage.setItem('token', result.data)
+                            window.location.assign("http://localhost:5000/");
                         } else{
                             alert(result.error)
                         }

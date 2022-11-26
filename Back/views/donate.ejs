@@ -48,34 +48,43 @@
     </header>
     <main>
         <div class="container">
-            <form class="search-bar-form" action="">
+            <form class="search-bar-form" action="/donate" method="post" id="search">
                 <div class="search-grid">
                     <input type="search" class="search-bar" name="search" id="search" placeholder="Search Organization.." aria-label="search for organization">
-
-                    <script>
-                        var x = document.getElementById("search").value;
-                    </script>
-
                     <button class="search-btn"><i class="fa fa-search"></i></button>
                 </div>
             </form>
             <section class="search-results-list">
                 <ul>
-                    <li class="list-grid-item">
-                        <img src="images/donations.jpg" alt="">
-                        <div class="list-grid-item-info">
-                            <a href="/org-page" class="list-org-link"><p id="list-org-name">Organization Name</p></a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quam doloremque accusantium sequi voluptate debitis numquam id deleniti! Commodi, impedit! Ea fugit, ducimus molestias aliquam magni mollitia doloremque dolore molestiae.</p>
-                        </div>
-                    </li>
-                    <li class="list-grid-item">
-                        <img src="images/donations.jpg" alt="">
-                        <div class="list-grid-item-info">
-                            <a href="/org-page" class="list-org-link"><p id="list-org-name">Organization Name</p></a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quam doloremque accusantium sequi voluptate debitis numquam id deleniti! Commodi, impedit! Ea fugit, ducimus molestias aliquam magni mollitia doloremque dolore molestiae.</p>
-                        </div>
-                    </li>
+                    <%posts.forEach((posts) => { %>
+                        <li class="list-grid-item">
+                            <img src="data:image/<%=posts.image.contentType%>;base64,
+                            <%=posts.image.data.toString('base64')%>">
+                            <div class="list-grid-item-info">
+                                <a href="/org-page" class="list-org-link"><p id="org-name"><%= posts.name %></p></a>
+                                <p><%= posts.description %></p>
+                            </div>
+                        </li>
+                    <% }) %>
                 </ul>
+                <script>
+                    document.onclick = function(event) {
+                        var target = event.target || event.srcElement;
+                        localStorage.removeItem('orgName');
+                        localStorage.setItem('orgName', target.innerHTML );
+                        function setCookie(name,value,exp_days) {
+                            var d = new Date();
+                            d.setTime(d.getTime() + (exp_days*24*60*60*1000));
+                            var expires = "expires=" + d.toGMTString();
+                            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+                        }
+                        setCookie('orgName', target.innerHTML, 5 )
+                        
+                     };
+                        
+                
+                </script>
+                
             </section>
         </div>
     </main>
